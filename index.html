@@ -1,1 +1,31 @@
-你好！我来啦！
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的首页</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+
+		}
+		#div1{
+			width:100px;
+			height: 100px;
+			background:yellow;
+			position: absolute;
+			top:0;
+			left:0;
+		}
+	</style>
+</head>
+<body>
+	<div id="div1"></div>
+<script type="text/javascript" src="index.js"></script>
+<script type="text/javascript">
+	var d = new Drag('div1');
+	d.init();
+</script>
+
+</body>
+</html>
