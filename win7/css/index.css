@@ -1,0 +1,741 @@
+/*默认样式重置*/
+
+html,body {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	margin: 0;
+	background: url(../deskImg/desk.jpg) no-repeat;
+	background-size: 100% 100%;
+}
+a {
+	text-decoration: none;
+}
+img {
+	border: none;
+	vertical-align: top;
+}
+h2,h1,h3,p {
+	margin: 0;
+}
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+input {
+	margin: 0;
+	padding: 0;
+	outline: none;
+}
+li {
+	vertical-align: top;
+}
+.clear {
+	zoom: 1;
+}
+.clear:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+
+.wrap {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.wrap>ul {
+	position: absolute;
+	width: 100px;
+	left: 0;
+	top: 0;
+	border: 1px solid #fff;
+	padding: 2px;
+	display: none;
+	z-index: 333;
+}
+.wrap>ul li {
+	font: 14px/24px "微软雅黑";
+	text-indent: 10px;
+	border: 1px solid #fff;
+	margin: 5px 0;
+	cursor: pointer;
+}
+.wrap>ul .active {
+	border: 1px solid skyblue;
+	background: #fff;
+}
+.desktop {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.desktop div {
+	position: absolute;
+	width: 120px;
+	height: 120px;
+}
+.desktop .hover {
+	background: rgba(255,255,255,.3);
+	border-radius: 6px;
+}
+.desktop .active {
+	background: rgba(255,255,255,.5);
+	border-radius: 6px;
+}
+.desktop img {
+	position: absolute;
+	left: 20px;
+	top: 10px;
+	width: 80px;
+	height: 80px;
+	cursor: pointer;
+}
+.desktop span {
+	position: absolute;
+	width: 80px;
+	height: 20px;
+	left: 20px;
+	bottom: 10px;
+	font: 14px/20px "微软雅黑";
+	text-align: center;
+	color: #fff;
+}
+.desktop input {
+	position: absolute;
+	width: 80px;
+	height: 20px;
+	left: 20px;
+	bottom: 10px;
+	display: none;
+	font: 16px/20px "微软雅黑";
+	text-align: center;
+	color: #000;
+	border: 1px solid #000;
+}
+.popup {
+	position: absolute;
+	left: 50%;
+	top: 10%;
+	width: 186px;
+	background: #f0f0f0;
+	border: 1px solid #979797;
+	padding: 2px;
+	border-radius: 2px;
+	display: none;
+	z-index: 2;
+}
+
+.list ul{
+	position: absolute;
+	width: 100%;
+	left: 180px;
+	top: -1px;
+	border: 1px solid #979797;
+	padding: 2px;
+	border-radius: 2px;
+	background: #F0F0F0;
+	z-index: 5;
+	display: none;
+}
+
+.popup li {
+	border: 1px solid #979797;
+	height: 26px;
+	margin: 5px 0;
+	position: relative;
+	border-radius: 2px;
+	cursor: pointer;
+}
+.popup .active {
+	border-color: blue;
+	box-shadow: inset 0 0 5px blue;
+}
+.popup .active ul {
+	display: block;
+}
+.popup h2 {
+	text-indent: 1em;
+	font: 14px/26px "微软雅黑";
+}
+
+/*照片墙*/
+
+.pictureWall {
+	position: absolute;
+	left: 5%;
+	top: 5%;
+	width: 90%;
+	height: 90%;
+	overflow: hidden;
+	background: -webkit-linear-gradient(left top,skyblue 0%,lightblue 50%,skyblue 100%);
+	background: -moz-linear-gradient(left top,skyblue 0%,lightblue 50%,skyblue 100%);
+	opacity: 0;
+	display: none;
+	z-index: 9999;
+}
+
+@keyframes move{
+	0% {
+		background-position: -130px;
+	}
+	100% {
+		background-position: 130px;
+	}
+}
+@keyframes cubeMove{
+	16%{
+		transform:rotateY(-90deg);
+	}
+    33%{
+    	transform:rotateY(-90deg) rotateZ(135deg);
+    }
+    50%{
+    	transform:rotateY(225deg) rotateZ(135deg);
+    }
+    66%{
+    	transform:rotateY(135deg) rotateZ(135deg);
+    }
+    83%{
+    	transform:rotateY(135deg);
+    }
+}
+
+#header {
+	width: 100%;
+	height: 60px;
+	background: #000;
+	color: #fff;
+	position: relative;
+}
+
+#header h1 {
+	font:24px/53px "微软雅黑";
+	color: #5f5f5f;
+	text-align: center;
+	
+}
+
+#header h1 span {
+	display: inline-block;
+	color: rgba(255,255,255,.3);
+	background: linear-gradient(130deg,rgba(255,255,255,0) 30px,rgba(255,255,255,1) 50px,rgba(255,255,255,1) 60px,rgba(255,255,255,0) 80px) no-repeat -120px 0;
+	background-clip: -webkit-text;
+	animation: move 6s infinite;
+	cursor: pointer;
+}
+
+#header strong {
+	position: absolute;
+	width: 70px;
+	height: 34px;
+	font: bold 14px/34px "微软雅黑";
+	text-align: center;
+	top: 20%;
+	border: 1px solid #333;
+	border-radius: 6px 20px;
+	box-shadow: 0 0 6px rgba(255,255,255,1);
+	cursor: pointer;
+	z-index: 999;
+}
+
+#header strong:nth-of-type(1) {
+	left: 4%;
+}
+#header strong:nth-of-type(2) {
+	right: 4%;
+}
+
+#imgList {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	overflow: hidden;
+	perspective: 1000000px;
+}
+
+#imgList li {
+	width: 160px;
+	height: 100px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	transform: rotateZ(0deg) scale(1);
+	transform-style: preserve-3d;
+	transform-origin: center center -50px; 
+	z-index: 1;
+	cursor: pointer;
+}
+
+.btn input {
+	position: absolute;
+	top: 45%;
+	width: 60px;
+	height: 60px;
+	border: 1px solid #000;
+	font: 40px/60px "宋体";
+	text-align: center;
+	border-radius: 50%;
+	color: #fff;
+	box-shadow: 0 0 5px rgba(255,255,255,.8);
+	background: #000;
+	transform: scale(1);
+	display: none;
+	outline: none;
+	cursor: pointer;
+	z-index: 99999999;
+}
+.prev {
+	left: 1%;
+}
+.next {
+	right: 1%;
+}
+
+#imgList li div {
+	position: absolute;
+	left: 0;
+	top: 0;
+	transform-origin: center center -50px;
+	background-size: 800px 600px; 
+}
+
+#imgList li div:nth-of-type(1) {
+	width: 160px;
+	height: 100px;
+	background-size: 160px 100px;
+}
+#imgList li div:nth-of-type(2) {
+	width: 100px;
+	height: 100px;
+	transform: translateX(60px) rotateY(90deg);
+}
+#imgList li div:nth-of-type(3) {
+	width: 160px;
+	height: 100px;
+	transform: rotateY(180deg);
+}
+#imgList li div:nth-of-type(4) {
+	width: 100px;
+	height: 100px;
+	transform: rotateY(270deg);
+}
+#imgList li div:nth-of-type(5) {
+	width: 160px;
+	height: 100px;
+	transform: rotateX(90deg);
+}
+#imgList li div:nth-of-type(6) {
+	width: 160px;
+	height: 100px;
+	transform: rotateX(-90deg);
+} 
+
+.cubeWrap {
+	width: 350px;
+	height: 350px;
+	position: relative;
+	margin: 110px auto;
+	perspective: 800px;
+	display: none;
+	cursor: pointer;
+}
+.cube {
+	width: 350px;
+	height: 350px;
+	transform-style: preserve-3d;
+	position: absolute;
+	left: 0;
+	top: 0;
+	transform-origin: center center -175px;
+	animation: 10s cubeMove infinite;
+}
+.cube div {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 350px;
+	height: 350px;
+	transform-origin: center center -175px;
+	background-size: 350px 350px;
+	background-image: url(../img/21.jpg);
+	opacity: .8;
+}
+.cube div:nth-of-type(1) {
+	width: 350px;
+	height: 350px;
+}
+.cube div:nth-of-type(2) {
+	width: 350px;
+	height: 350px;
+	transform: rotateY(90deg);
+}
+.cube div:nth-of-type(3) {
+	width: 350px;
+	height: 350px;
+	transform: rotateY(180deg);
+}
+.cube div:nth-of-type(4) {
+	width: 350px;
+	height: 350px;
+	transform: rotateY(270deg);
+}
+.cube div:nth-of-type(5) {
+	width: 350px;
+	height: 350px;
+	transform: rotateX(90deg);
+}
+.cube div:nth-of-type(6) {
+	width: 350px;
+	height: 350px;
+	transform: rotateX(-90deg);
+}
+
+/*贪吃蛇*/
+
+#snake {
+	position: absolute;
+	top: -800px;
+	left: 20%;
+	width: 800px;
+	height: 577px;
+	border: 2px solid #FF0000;
+	margin: 0 auto;
+	background: #E8FFFB;
+	display: none;
+	z-index: 333;
+}
+.info {
+	height: 60px;
+	border-bottom: 2px solid #FF0000;
+	text-align: center;
+	font: 28px/60px Arial;
+}
+#map {
+	border-bottom: 2px solid #FF0000; 
+}
+#map table {
+	margin: 0 auto;
+	border-collapse: collapse;
+}
+#map table td {
+	width: 22px;
+	height: 22px;
+	border: 1px solid #FEC489;
+	background: #fff;;
+}
+/* -------------------------- */
+#map table td.snake {
+	background: #728cff;
+}
+#map table td.food {
+	background: #81ff9c;
+}
+#map table td.block{
+	background: #f72ab5;
+}
+#map table td.skate{
+	background: #e8ff10;
+}
+#map table td.break{
+	background: #20f5f8;
+}
+/* --------------------------------- */
+.help {
+	height: 50px;
+	display: flex;
+}
+.left {
+	width: 75%;
+	display: flex;
+	border-right: 1px solid red;
+	justify-content: space-around;
+	align-items: center;
+}
+.right {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.left div {
+	height: 50px;
+	display: flex;
+	align-items: center;
+}
+.left div span {
+	height: 22px;
+	width: 22px;
+	display: inline-block;
+	border: 1px solid #fbe2f9;
+	background: blue;
+	margin-right: 5px;
+}
+
+
+/*音乐播放器*/
+.musicWrap {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,.5);
+	display: none;
+	z-index: 999;
+	transition: 1s;
+	overflow: hidden;
+}
+#musicWrap {
+	width: 240px;
+	height: 40px;
+	left: 43%;
+}
+#musicWrap .header {
+	height: 40px;
+}
+#musicWrap .musicName {
+	text-align: right;
+	height: 20px;
+}
+#musicWrap .musicArtist {
+	height: 20px;
+	text-align: right;
+}
+.musicWrap .header {
+	width: 100%;
+	height: 6%;
+	position: relative;
+}
+.header span {
+	position: absolute;
+	top: 0;
+	width: 30px;
+	height: 30px;
+	top: 5px;
+	cursor: pointer;
+}
+.header .min {
+	left: 10px;
+	background: url(../deskImg/min.png) no-repeat;
+	background-size: 30px 30px;
+}
+.header .max {
+	left: 50px;
+	background: url(../deskImg/max.png) no-repeat;
+	background-size: 30px 30px;
+}
+.header .close {
+	left: 90px;
+	background: url(../deskImg/close.png) no-repeat;
+	background-size: 30px 30px;
+}
+.header div {
+	text-align: center;
+}
+.header .musicName {
+	font: 16px/20px "微软雅黑";
+	color: yellow;
+}
+.header .musicArtist {
+	font: 14px/20px "微软雅黑";
+	color: #fff;
+}
+.middle {
+	width: 100%;
+	height: 500px;
+	text-align: center;
+}
+.middle p {
+	width: 100%;
+	font: 20px/30px "微软雅黑";
+	color: #fff;
+	margin-top: -80px;
+	margin-bottom: 90px;
+}
+#canvas {
+	text-align: center;
+}
+.musicWrap .bottom {
+	height: 120px;
+}
+.bottom .process {
+	width: 350px;
+	height: 20px;
+	margin: 0 auto;
+	text-align: center;
+	position: relative;
+}
+.process span {
+	position: absolute;
+	top: 0;
+	font: 12px/20px "微软雅黑";
+	height: 20px;
+}
+.process .nowTime {
+	left: 12px;
+}
+.process .totalTime {
+	right: 12px;
+}
+.process .bar {
+	display: inline-block;
+	width: 240px;
+	height: 20px;
+	position: relative;
+	cursor: pointer;
+}
+.curnow {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 2px;
+	margin-top: 9px;
+	background: red;
+}
+.curnow .dotBtn {
+	position: absolute;
+	left: -10px;
+	top: -9px;
+	width: 20px;
+	height: 20px;
+	background: url(../deskImg/process_btn.png) no-repeat;
+	background-size: 20px 20px;
+	z-index: 999;
+}
+.bar .length {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 2px;
+	margin-top: 9px;
+	background: #615D5C;
+}
+.bottom .control {
+	width: 350px;
+	height: 120px;
+	margin: 0 auto;
+}
+.control span {
+	display: inline-block;
+	margin-right: 15px;
+	cursor: pointer;
+}
+.control .loop {
+	width: 36px;
+	height: 36px;
+	background: url(../deskImg/play_icn_loop.png) no-repeat;
+}
+.control .pre {
+	width: 50px;
+	height: 50px;
+	background: url(../deskImg/play_btn_prev.png) no-repeat;
+}
+.control .next {
+	width: 50px;
+	height: 50px;
+	background: url(../deskImg/play_btn_next.png) no-repeat;
+}
+.control .play {
+	width: 70px;
+	height: 70px;
+	background: url(../deskImg/play_rdi_btn_play.png) no-repeat;
+}
+.control .list {
+	width: 36px;
+	height: 36px;
+	background: url(../deskImg/play_icn_src.png) no-repeat;
+}
+
+.playList {
+	position: absolute;
+	left: 0;
+	bottom: -360px;
+	width: 100%;
+	height: 360px;
+	background: rgba(0,0,0,.5);
+	overflow: hidden;
+	transition: 1s;
+}
+.playList h2 {
+	width: 100%;
+	height: 65px;
+	background: url(../deskImg/musicH2.png) no-repeat 20px 10px;
+	background-size: 40px 40px;
+}
+.playList h2 span {
+	float: left;
+	font: bold 24px/65px "宋体";
+	color: #fff;
+	text-indent: 3em;
+}
+.playList h2 strong {
+	position: absolute;
+	font: 30px/32px "微软雅黑";
+	right: 20px;
+	top: 10px;
+	width: 40px;
+	height: 40px;
+	transition: .6s;
+	color: #fff;
+	text-align: center;
+	cursor: pointer;
+}
+.playList .listWrap {
+	position: absolute;
+	left: 0;
+	top: 65px;
+	width: 100%;
+	height: 295px;
+	overflow: hidden;
+}
+.playList ul {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+}
+.playList li {
+	border-top: 1px solid #fff;
+	font: 16px/40px "微软雅黑";
+	cursor: pointer;
+	height: 41px;
+	padding-left: 1.5em;
+}
+.playList .active {
+	background: url(../deskImg/song_play_icon.png) no-repeat;
+	background-position: 0 50%;
+	padding-left: 2em;
+}
+.playList li span:nth-of-type(1) {
+	color: yellow;
+}
+.playList li span:nth-of-type(2) {
+	color: #fff;
+}
+
+
+.playList .scroll {
+	position: absolute;
+	right: 2px;
+	top: 65px;
+	height: 295px;
+	width: 10px;
+}
+.scroll .roll {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100px;
+	width: 10px;
+	border-radius: 10px;
+	background: rgba(255,255,255,.3);
+}
